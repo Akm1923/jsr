@@ -1,0 +1,62 @@
+<!-- templates/result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Segmentation Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .image-wrapper {
+            width: 45%;
+        }
+        img {
+            max-width: 100%;
+            border: 1px solid #ccc;
+        }
+        .info {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Segmentation Results</h1>
+    
+    <div class="image-container">
+        <div class="image-wrapper">
+            <h2>Original Image</h2>
+            <img src="{{ original_image }}" alt="Original Image">
+        </div>
+        <div class="image-wrapper">
+            <h2>Segmented Image</h2>
+            <img src="{{ segmented_image }}" alt="Segmented Image">
+        </div>
+    </div>
+    
+    <div class="info">
+        Segmented Pixel Count: {{ pixel_count }}
+    </div>
+    
+    <a href="/">Upload Another Image</a>
+</body>
+</html>
